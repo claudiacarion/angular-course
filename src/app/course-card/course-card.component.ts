@@ -33,4 +33,10 @@ export class CourseCardComponent {
     }
   }
 
+  cardStyles() {
+    return {
+      'background-image': 'url(' + this.course.iconUrl + ')'
+    }
+  }
+
 }
