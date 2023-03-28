@@ -5,9 +5,37 @@
 
 </div>
 
+<div class="demo">
+	{{startDate | date:'MMM-dd-yyyy'}}
+</div>
+
+<div>
+	{{title | titlecase}}
+</div>
+
+<div>
+	{{price | number:'3.3-5'}}
+</div>
+
+<div>
+	{{price | currency:'EUR':true:'3.3-5'}}
+</div>
+
+<div>
+	{{rate | percent}}
+</div>
+
+<!-- <div>
+	{{courses | json}}
+</div> -->
+
+<div *ngFor="let pair of course | keyvalue">
+	{{pair.key}}: {{pair.value}}
+</div>
+
 <div class="courses">
 
-  <course-card *ngFor="let course of courses; index as i"
+  <course-card *ngFor="let course of courses | slice: 0:2; index as i"
 
     (courseSelected)="onCourseSelected($event)"
 			[course]="course"
